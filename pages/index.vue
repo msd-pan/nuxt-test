@@ -1,5 +1,8 @@
 <template>
-  <h1>hello world</h1>
+  <Banner />
+
+  <h2>Recent Notes:</h2>
+  <NoteCard />
 </template>
 
 <style></style>
