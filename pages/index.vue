@@ -11,7 +11,7 @@
 <script setup>
 const foo = useFoo();
 const { $hello, $consoleIt } = useNuxtApp();
-console.log("useNuxtApp()", useNuxtApp());
+// console.log("useNuxtApp()", useNuxtApp());
 const { data } = await useFetch("/api/hello");
 </script>
 

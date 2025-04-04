@@ -31,4 +31,6 @@ export default defineNuxtConfig({
   },
 
   plugins: ["~/plugins/foo/my-plugin"],
+
+  // ssr: false,
 });
