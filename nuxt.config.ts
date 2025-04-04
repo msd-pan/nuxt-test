@@ -29,4 +29,6 @@ export default defineNuxtConfig({
   imports: {
     dirs: ["composables", "composables/**"],
   },
+
+  plugins: ["~/plugins/foo/my-plugin"],
 });
