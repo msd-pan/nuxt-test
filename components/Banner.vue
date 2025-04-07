@@ -1,30 +1,24 @@
 <template>
-  <h1 v-debug>Welcome To Our Notes App!</h1>
-  <button @click="fullName = 'Carlos cold'">change name</button>
-  <h2>{{ fullName }}</h2>
-
-  <ul>
-    <li v-for="(value, key) in user" :key="key">{{ key }} : {{ value }}</li>
-  </ul>
+  <h1 v-debug :class="isRed ? 'is-red' : 'is-green'" @click="isRed = !isRed">
+    Welcome To Our Notes App!
+  </h1>
 </template>
 <script setup>
-const firstName = ref("John");
-const lastName = ref("dow");
+const isRed = ref(true);
 
-const fullName = computed({
-  get: () => {
-    return `${firstName.value} ${lastName.value}`;
+watch(
+  isRed,
+  (newV, preV) => {
+    console.log(`new: ${newV} pre: ${preV}`);
   },
-  set: (name) => {
-    const names = name.split(" ");
-    firstName.value = names[0];
-    lastName.value = names[names.length - 1];
-  },
-});
-
-const user = reactive({
-  name: "John Doe",
-  age: 30,
-  email: "test@email.com",
-});
+  { once: true }
+);
 </script>
+<style scoped>
+.is-red {
+  color: red;
+}
+.is-green {
+  color: green;
+}
+</style>
